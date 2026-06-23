@@ -5,85 +5,53 @@ backend:
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
-collections:
-  - name: "portfolio"
-    label: "Portfolio"
-    files:
-      - file: "portfolio.json"
-        label: "Portfolio Items"
-        name: "portfolio"
-        fields:
-          - label: "Items"
-            name: "items"
-            widget: "list"
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Category", name: "category", widget: "select", options: ["Fashion", "Wedding", "Campaign", "Product", "Event", "Video"] }
-              - { label: "Image", name: "image", widget: "image", required: false }
-              - { label: "Video URL", name: "video", widget: "string", required: false }
-              - { label: "Description", name: "description", widget: "text", required: false }
+site_url: "https://hilalaydogdu.com"
+display_url: "https://hilalaydogdu.com"
 
+collections:
   - name: "site"
-    label: "Site Content"
+    label: "Website Settings"
     files:
       - file: "site.json"
-        label: "Site Settings"
+        label: "Main Website Content"
         name: "settings"
         fields:
-          - label: "Home"
+          - label: "Brand"
+            name: "brand"
+            widget: "object"
+            fields:
+              - { label: "Brand Name", name: "name", widget: "string" }
+              - { label: "Logo Dark", name: "logo_dark", widget: "image", required: false }
+              - { label: "Logo Light", name: "logo_light", widget: "image", required: false }
+
+          - label: "Homepage Hero"
             name: "home"
             widget: "object"
             fields:
-              - { label: "Kicker", name: "kicker", widget: "string" }
-              - { label: "Title", name: "title", widget: "text" }
+              - { label: "Small Top Text", name: "kicker", widget: "string" }
+              - { label: "Main Title", name: "title", widget: "text" }
               - { label: "Subtitle", name: "subtitle", widget: "text" }
               - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
-backend:
-  name: git-gateway
-  branch: main
+              - { label: "Primary Button Text", name: "primary_button_text", widget: "string" }
+              - { label: "Primary Button Link", name: "primary_button_link", widget: "string" }
+              - { label: "Secondary Button Text", name: "secondary_button_text", widget: "string" }
+              - { label: "Secondary Button Link", name: "secondary_button_link", widget: "string" }
 
-media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
-
-collections:
-  - name: "portfolio"
-    label: "Portfolio"
-    files:
-      - file: "portfolio.json"
-        label: "Portfolio Items"
-        name: "portfolio"
-        fields:
-          - label: "Items"
-            name: "items"
+          - label: "Services"
+            name: "services"
             widget: "list"
             fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Category", name: "category", widget: "select", options: ["Fashion", "Wedding", "Campaign", "Product", "Event", "Video"] }
-              - { label: "Image", name: "image", widget: "image", required: false }
-              - { label: "Video URL", name: "video", widget: "string", required: false }
-              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Service Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
 
-  - name: "site"
-    label: "Site Content"
-    files:
-      - file: "site.json"
-        label: "Site Settings"
-        name: "settings"
-        fields:
-          - label: "Home"
-            name: "home"
-            widget: "object"
-            fields:
-              - { label: "Kicker", name: "kicker", widget: "string" }
-              - { label: "Title", name: "title", widget: "text" }
-              - { label: "Subtitle", name: "subtitle", widget: "text" }
-              - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
-          - label: "About"
+          - label: "About Page"
             name: "about"
             widget: "object"
             fields:
+              - { label: "Title", name: "title", widget: "string" }
               - { label: "About Text", name: "text", widget: "text" }
-              - { label: "Portrait", name: "portrait", widget: "image", required: false }
+              - { label: "Portrait / About Image", name: "image", widget: "image", required: false }
+
           - label: "Contact"
             name: "contact"
             widget: "object"
@@ -92,3 +60,38 @@ collections:
               - { label: "Phone", name: "phone", widget: "string" }
               - { label: "Instagram URL", name: "instagram", widget: "string" }
               - { label: "Instagram Handle", name: "instagram_handle", widget: "string" }
+
+          - label: "Social Links"
+            name: "socials"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Platform", name: "platform", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+
+  - name: "portfolio"
+    label: "Portfolio"
+    files:
+      - file: "portfolio.json"
+        label: "Portfolio Items"
+        name: "portfolio"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options:
+                  - "Fashion"
+                  - "Wedding"
+                  - "Campaign"
+                  - "Product"
+                  - "Event"
+                  - "Video"
+              - { label: "Main Image", name: "image", widget: "image", required: false }
+              - { label: "Video URL", name: "video_url", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false }
