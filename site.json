@@ -87,12 +87,12 @@
     }
   ],
   "home": {
-    "hero_video_file": "/assets/uploads/hi3a8930.jpg",
+    "hero_video_file": "",
     "hero_video_url": "",
     "primary_button_link": "/portfolio.html",
     "secondary_button_text": "Book / Inquiry",
     "kicker": "Fashion · Wedding · Campaign · Product",
-    "hero_image": "",
+    "hero_image": "/assets/uploads/hi3a8902.jpg",
     "subtitle": "Minimal, editorial visuals — photography & film crafted with intention. Based in Rotterdam. Available for the Netherlands and international projects.",
     "title": "No Way\nCreative Production",
     "secondary_button_link": "/contact.html",
