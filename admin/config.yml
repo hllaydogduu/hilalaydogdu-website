@@ -2,27 +2,38 @@ backend:
   name: git-gateway
   branch: main
 
+local_backend: false
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
-
 site_url: "https://hilalaydogdu.com"
 display_url: "https://hilalaydogdu.com"
+logo_url: "/assets/no_way_logo_color.png"
 
 collections:
   - name: "site"
-    label: "Website Settings"
+    label: "Website Dashboard"
     files:
       - file: "site.json"
-        label: "Main Website Content"
+        label: "Full Website Control"
         name: "settings"
         fields:
-          - label: "Brand"
+          - label: "Brand / Logo"
             name: "brand"
             widget: "object"
             fields:
               - { label: "Brand Name", name: "name", widget: "string" }
+              - { label: "Navigation Name", name: "nav_name", widget: "string" }
               - { label: "Logo Dark", name: "logo_dark", widget: "image", required: false }
               - { label: "Logo Light", name: "logo_light", widget: "image", required: false }
+              - { label: "Logo Color", name: "logo_color", widget: "image", required: false }
+              - { label: "Favicon", name: "favicon", widget: "image", required: false }
+
+          - label: "Navigation Menu"
+            name: "navigation"
+            widget: "list"
+            fields:
+              - { label: "Menu Label", name: "label", widget: "string" }
+              - { label: "Link", name: "url", widget: "string" }
 
           - label: "Homepage Hero"
             name: "home"
@@ -31,35 +42,66 @@ collections:
               - { label: "Small Top Text", name: "kicker", widget: "string" }
               - { label: "Main Title", name: "title", widget: "text" }
               - { label: "Subtitle", name: "subtitle", widget: "text" }
-              - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
+              - { label: "Hero Image / Logo / Video Poster", name: "hero_image", widget: "image", required: false }
+              - { label: "Hero Video File", name: "hero_video_file", widget: "file", required: false }
+              - { label: "Hero Video URL", name: "hero_video_url", widget: "string", required: false }
               - { label: "Primary Button Text", name: "primary_button_text", widget: "string" }
               - { label: "Primary Button Link", name: "primary_button_link", widget: "string" }
               - { label: "Secondary Button Text", name: "secondary_button_text", widget: "string" }
               - { label: "Secondary Button Link", name: "secondary_button_link", widget: "string" }
+
+          - label: "Featured Work Section"
+            name: "featured_section"
+            widget: "object"
+            fields:
+              - { label: "Section Title", name: "title", widget: "string" }
+              - { label: "Button Text", name: "button_text", widget: "string" }
+              - { label: "Button Link", name: "button_link", widget: "string" }
 
           - label: "Services"
             name: "services"
             widget: "list"
             fields:
               - { label: "Service Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Short Description", name: "description", widget: "text" }
+              - { label: "Service Image", name: "image", widget: "image", required: false }
+
+          - label: "Services Page Extra"
+            name: "booking"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+              - { label: "Button Text", name: "button_text", widget: "string" }
+              - { label: "Button Link", name: "button_link", widget: "string" }
 
           - label: "About Page"
             name: "about"
             widget: "object"
             fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "About Text", name: "text", widget: "text" }
+              - { label: "Page Title", name: "title", widget: "string" }
+              - { label: "About Text", name: "text", widget: "markdown" }
               - { label: "Portrait / About Image", name: "image", widget: "image", required: false }
 
-          - label: "Contact"
+          - label: "Portfolio Page"
+            name: "portfolio_page"
+            widget: "object"
+            fields:
+              - { label: "Page Title", name: "title", widget: "string" }
+              - { label: "Intro Text", name: "intro", widget: "text" }
+
+          - label: "Contact Page"
             name: "contact"
             widget: "object"
             fields:
+              - { label: "Page Title", name: "title", widget: "string" }
+              - { label: "Intro Text", name: "intro", widget: "text" }
               - { label: "Email", name: "email", widget: "string" }
               - { label: "Phone", name: "phone", widget: "string" }
               - { label: "Instagram URL", name: "instagram", widget: "string" }
               - { label: "Instagram Handle", name: "instagram_handle", widget: "string" }
+              - { label: "Email Button Text", name: "email_button_text", widget: "string" }
+              - { label: "Instagram Button Text", name: "instagram_button_text", widget: "string" }
 
           - label: "Social Links"
             name: "socials"
@@ -69,8 +111,14 @@ collections:
               - { label: "Platform", name: "platform", widget: "string" }
               - { label: "URL", name: "url", widget: "string" }
 
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Footer Text", name: "text", widget: "string" }
+
   - name: "portfolio"
-    label: "Portfolio"
+    label: "Portfolio / Media"
     files:
       - file: "portfolio.json"
         label: "Portfolio Items"
@@ -79,19 +127,16 @@ collections:
           - label: "Items"
             name: "items"
             widget: "list"
+            summary: "{{fields.title}} — {{fields.category}}"
             fields:
               - { label: "Title", name: "title", widget: "string" }
               - label: "Category"
                 name: "category"
                 widget: "select"
-                options:
-                  - "Fashion"
-                  - "Wedding"
-                  - "Campaign"
-                  - "Product"
-                  - "Event"
-                  - "Video"
+                options: ["Fashion", "Wedding", "Campaign", "Product", "Event", "Video", "Personal"]
               - { label: "Main Image", name: "image", widget: "image", required: false }
-              - { label: "Video URL", name: "video_url", widget: "string", required: false }
-              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Video File", name: "video_file", widget: "file", required: false }
+              - { label: "Video URL / Embed Link", name: "video_url", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "markdown", required: false }
               - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false }
+              - { label: "Order", name: "order", widget: "number", default: 1, value_type: "int" }
