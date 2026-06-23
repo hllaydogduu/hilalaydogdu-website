@@ -1,0 +1,40 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "portfolio"
+    label: "Portfolio"
+    files:
+      - file: "portfolio.json"
+        label: "Portfolio Items"
+        name: "portfolio"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Category", name: "category", widget: "select", options: ["Fashion", "Wedding", "Campaign", "Product", "Event", "Video"] }
+              - { label: "Image", name: "image", widget: "image", required: false }
+              - { label: "Video URL", name: "video", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text", required: false }
+
+  - name: "site"
+    label: "Site Content"
+    files:
+      - file: "site.json"
+        label: "Site Settings"
+        name: "settings"
+        fields:
+          - label: "Home"
+            name: "home"
+            widget: "object"
+            fields:
+              - { label: "Kicker", name: "kicker", widget: "string" }
+              - { label: "Title", name: "title", widget: "text" }
+              - { label: "Subtitle", name: "subtitle", widget: "text" }
+              - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
