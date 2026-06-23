@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "title": "Portfolio 01",
+      "category": "Fashion",
+      "image": "",
+      "video_file": "",
+      "video_url": "",
+      "description": "",
+      "featured": true,
+      "order": 1
+    },
+    {
+      "title": "Portfolio 02",
+      "category": "Wedding",
+      "image": "",
+      "video_file": "",
+      "video_url": "",
+      "description": "",
+      "featured": true,
+      "order": 2
+    },
+    {
+      "title": "Portfolio 03",
+      "category": "Campaign",
+      "image": "",
+      "video_file": "",
+      "video_url": "",
+      "description": "",
+      "featured": true,
+      "order": 3
+    }
+  ]
+}

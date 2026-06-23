@@ -1,0 +1,70 @@
+{
+  "brand": {
+    "name": "No Way Creative Production",
+    "nav_name": "HILAL AYDOĞDU",
+    "logo_dark": "/assets/no_way_logo_dark.png",
+    "logo_light": "/assets/no_way_logo_offwhite.png",
+    "logo_color": "/assets/no_way_logo_color.png",
+    "favicon": "/assets/no_way_logo_color.png"
+  },
+  "navigation": [
+    { "label": "Portfolio", "url": "/portfolio.html" },
+    { "label": "Services", "url": "/services.html" },
+    { "label": "About", "url": "/about.html" },
+    { "label": "Contact", "url": "/contact.html" }
+  ],
+  "home": {
+    "kicker": "Fashion · Wedding · Campaign · Product",
+    "title": "No Way\nCreative Production",
+    "subtitle": "Minimal, editorial visuals — photography & film crafted with intention. Based in Rotterdam. Available for the Netherlands and international projects.",
+    "hero_image": "/assets/no_way_logo_color.png",
+    "hero_video_file": "",
+    "hero_video_url": "",
+    "primary_button_text": "View portfolio",
+    "primary_button_link": "/portfolio.html",
+    "secondary_button_text": "Book / Inquiry",
+    "secondary_button_link": "/contact.html"
+  },
+  "featured_section": {
+    "title": "Featured Work",
+    "button_text": "See full portfolio",
+    "button_link": "/portfolio.html"
+  },
+  "services": [
+    { "title": "Fashion", "description": "Editorial & lookbook shoots, creative direction, styling collaboration.", "image": "" },
+    { "title": "Wedding", "description": "Photography & video with a calm, documentary approach.", "image": "" },
+    { "title": "Campaign", "description": "Brand campaigns, social-first content, short-form reels.", "image": "" },
+    { "title": "Product", "description": "Textile & product imagery for e-commerce and premium branding.", "image": "" }
+  ],
+  "booking": {
+    "title": "How booking works",
+    "text": "1) You send an inquiry → 2) We align on concept & moodboard → 3) Shoot day → 4) Delivery preview + final set. Starting prices can be added later.",
+    "button_text": "Inquire",
+    "button_link": "/contact.html"
+  },
+  "about": {
+    "title": "About",
+    "text": "**Hilal Aydoğdu** — photographer & filmmaker. I create minimal, editorial visuals for fashion, weddings, campaigns and products. Based in Rotterdam.",
+    "image": "/assets/no_way_logo_color.png"
+  },
+  "portfolio_page": {
+    "title": "Portfolio",
+    "intro": "Add portfolio images and videos from the admin panel. Keep it tight: 24–36 strong pieces is enough to look premium."
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "Fastest: email or Instagram DM. Contact details can be edited from the admin panel.",
+    "email": "hll.aydogdu@gmail.com",
+    "phone": "06 146 954 62",
+    "instagram": "https://instagram.com/nowayproduction",
+    "instagram_handle": "@nowayproduction",
+    "email_button_text": "Send email",
+    "instagram_button_text": "DM on Instagram"
+  },
+  "socials": [
+    { "platform": "Instagram", "url": "https://instagram.com/nowayproduction" }
+  ],
+  "footer": {
+    "text": "Hilal Aydoğdu · No Way Creative Production · Rotterdam"
+  }
+}
