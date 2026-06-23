@@ -1,23 +1,19 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <title>Portfolio · Hilal Aydoğdu</title>
   <meta name="description" content="Portfolio — fashion, wedding, campaign and product work." />
-  
-<meta charset="UTF-8" />
+  <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#F7F3E8" />
 <link rel="stylesheet" href="/style.css" />
-
 </head>
 <body>
-
 <nav>
   <div class="container nav-inner">
     <a class="brand" href="/">
-      <img src="/assets/no_way_logo_dark.png" alt="No Way logo" />
-      <span>HILAL AYDOĞDU</span>
+      <img class="brand-logo" src="/assets/no_way_logo_dark.png" alt="No Way logo" />
+      <span class="brand-name">HILAL AYDOĞDU</span>
     </a>
     <div class="menu">
       <a href="/portfolio.html">Portfolio</a>
@@ -30,24 +26,19 @@
 
 <div class="section">
   <div class="container">
-    <h2>Portfolio</h2>
-    <p class="small">Replace placeholders with your best images. Keep it tight: 24–36 images total is enough to look premium.</p>
-    <div class="gallery">
-      <div class='ph'><span>Portfolio 01</span></div>
-<div class='ph'><span>Portfolio 02</span></div>
-<div class='ph'><span>Portfolio 03</span></div>
-<div class='ph'><span>Portfolio 04</span></div>
-<div class='ph'><span>Portfolio 05</span></div>
-<div class='ph'><span>Portfolio 06</span></div>
-<div class='ph'><span>Portfolio 07</span></div>
-<div class='ph'><span>Portfolio 08</span></div>
-<div class='ph'><span>Portfolio 09</span></div>
-<div class='ph'><span>Portfolio 10</span></div>
-<div class='ph'><span>Portfolio 11</span></div>
-<div class='ph'><span>Portfolio 12</span></div>
-    </div>
+    <h2 id="portfolio-title">Portfolio</h2>
+    <p class="small" id="portfolio-intro">Add portfolio images and videos from the admin panel.</p>
+    <div class="gallery" id="portfolio-gallery"><div class="ph"><span>Loading portfolio</span></div></div>
   </div>
 </div>
-{footer}
+<div class="footer">
+  <div class="container">
+    <div class="hr"></div>
+    <div class="small" id="footer-text">© Hilal Aydoğdu · No Way Creative Production · Rotterdam</div>
+  </div>
+</div>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="/scripts/site.js"></script>
+
 </body>
 </html>
